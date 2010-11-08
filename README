@@ -1,0 +1,12 @@
+This project contains some binarization algorithms intended for the use of barcode decoding, as well as some tools to compare the algorithms.
+
+This project is based on the ZXing project, and is intended to be used with the ZXing barcode scanning library.
+More info at: http://code.google.com/p/zxing/
+
+The code in this project, as well as the code in the ZXing project, is licensed under the Apache Licence, Version 2.0.
+See COPYING for details.
+
+To run a visual test tool, simply run "ant visual-tool".
+
+Some real-world is available on the github downloads page. This data can be downloaded automatically using the download_data.sh script. "ant batch-test" will run the tests on these data. To configure these tests, edit the source in BatchTest.java directly.
+

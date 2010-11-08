@@ -1,3 +1,6 @@
 test-pictures*
 out
+build
 workspace.xml
+results
+*~

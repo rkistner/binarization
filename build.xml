@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Binarization" default="build">
+    <path id="zxing.path">
+        <path location="lib/zxing/core.jar" />
+        <path location="lib/zxing/javase.jar" />
+    </path>
+
+    <target name="build">
+        <mkdir dir="build"/>
+        <javac srcdir="java/src" destdir="build" includeantruntime="false" classpathref="zxing.path" />
+    </target>
+
+    <target name="visual-tool" depends="build">
+        <java classpathref="zxing.path" classpath="build" classname="rkistner.VisualTest" fork="true" />
+    </target>
+
+    <target name="batch-test" depends="build">
+        <mkdir dir="results" />
+        <java classpathref="zxing.path" classpath="build" classname="rkistner.BatchTest">
+            <arg value="test-pictures" />
+        </java>
+    </target>
+
+    <target name="clean">
+        <delete dir="build" />
+    </target>
+
+</project>

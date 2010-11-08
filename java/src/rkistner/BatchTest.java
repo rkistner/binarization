@@ -56,7 +56,7 @@ public class BatchTest {
         return files;
     }
 
-    private static final String root = "images";
+    private static String root = "images";
 
     private static Map<Category, List<File>> catFiles = new HashMap<Category, List<File>>();
 
@@ -91,7 +91,7 @@ public class BatchTest {
         };
         int nf = factories.length;
 
-        PrintWriter out = new PrintWriter(new File("results.csv"));
+        PrintWriter out = new PrintWriter(new File("results/results.csv"));
 
         out.print(Category.getCSVHeader());
         out.print(",file");
@@ -168,6 +168,9 @@ public class BatchTest {
 
 
     public static void main(String[] args) throws IOException {
+        if(args.length > 0) {
+            root = args[0];
+        }
         locateFiles(0);
         allTest();
     }
